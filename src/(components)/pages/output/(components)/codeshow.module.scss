@@ -1,0 +1,12 @@
+.container {
+  background-color: #282A35;
+  box-sizing: border-box;
+  width: 50%;
+  border-right: 5px solid #543177;
+  padding: 50px;
+  height: calc(100vh - 183px);
+  .codeContainer {
+    background-color: #282A35;
+    height: 100%;
+  }
+}
