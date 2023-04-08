@@ -1,4 +1,27 @@
 .container {
   position: relative;
   display: flex;
+    background-color: #121314;
+flex: 1;
+  height: 100%;
+  max-height: calc(100vh - 156px);
+
+}
+.imageContainer{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding-block: 40px;
+  flex-wrap: wrap;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  & > img{
+    display: flex;
+    width: auto;
+    max-width: 30vw;
+    aspect-ratio: 1;
+    margin: 5px;
+    border-radius: 20px;
+  }
 }

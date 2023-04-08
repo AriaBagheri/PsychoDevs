@@ -1,5 +1,11 @@
 .container {
   width: 50%;
   background-color: #282A35;
-  height: calc(100vh - 183px);
+  min-height: calc(100vh - 156px);
+  max-height: calc(100vh - 156px);
+  height: 100%;
+  flex: 1;
+  position: relative;
+  overflow: scroll;
+
 }

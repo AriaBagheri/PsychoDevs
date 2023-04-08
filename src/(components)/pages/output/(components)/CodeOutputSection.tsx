@@ -1,14 +1,10 @@
 import React from 'react';
 import styles from './codeoutput.module.scss';
 
-function CodeOutputSection(props) {
-    function createMarkup() {
-        return {__html: '<button style="color: red">Hello</button>'};
-    }
-
+function CodeOutputSection({code}) {
     return (
         <div className={styles.container}>
-            <div dangerouslySetInnerHTML={createMarkup()} />
+            <div dangerouslySetInnerHTML={{__html: code}} />
         </div>
     );
 }

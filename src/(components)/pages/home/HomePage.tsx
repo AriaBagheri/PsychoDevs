@@ -1,18 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './homepage.module.scss';
 import Image from "next/image";
-import {BsMic, BsSearch} from "react-icons/bs";
+import {BsSearch} from "react-icons/bs";
 
-function HomePage(props) {
+function HomePage(props: any) {
+    const [text, setText] = useState(props.defaultPrompt);
     return (
         <div className={styles.container}>
-            <Image className={styles.logo} src={"/logo.png"} alt={"logo"} width={180} height={180}/>
+            <Image src={"/logo.png"} alt={"logo"} width={180} height={180}/>
             <h1>AI Website Assistant</h1>
-            <div className={styles.inputContainer}>
-                <BsSearch/>
-                <input type="text" placeholder={"Enter your question or code..."}/>
-                <BsMic/>
-            </div>
+            <form className={styles.inputContainer} onSubmit={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                props.onSubmit(text);
+            }}>
+                <textarea type="text" placeholder={"Enter your question or code..."}
+                          onChange={(e) => {
+                              setText(e.target.value);
+                          }}
+                          aria-multiline={true}
+                          defaultValue={text as string}/>
+                <BsSearch onClick={() => {
+                    props.onSubmit(text);
+                }}/>
+            </form>
         </div>
     );
 }

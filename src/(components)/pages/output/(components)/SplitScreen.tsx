@@ -4,11 +4,11 @@ import styles from './splitscreen.module.scss'
 import CodeShowSection from "@/(components)/pages/output/(components)/CodeShowSection";
 import CodeOutputSection from "@/(components)/pages/output/(components)/CodeOutputSection";
 
-function SplitScreen(props) {
+function SplitScreen({code}) {
     return (
         <div className={styles.container}>
-            <CodeShowSection/>
-            <CodeOutputSection/>
+            <CodeShowSection code={code}/>
+            <CodeOutputSection code={code}/>
         </div>
     );
 }
